@@ -1,0 +1,315 @@
+Generated CSVs in /tmp/fresh/data
+sales.csv: 544 rows → daily demand table 90 days × 3 SKUs
+       opening_stock
+sku                 
+SKU_A            120
+SKU_B            150
+SKU_C            100
+       unit_cost  holding_cost_per_day  ...  min_order_qty  service_level
+sku                                     ...                              
+SKU_A        8.0                   0.1  ...             60           0.95
+SKU_B       15.0                   0.2  ...             50           0.95
+SKU_C       40.0                   0.5  ...             30           0.90
+
+[3 rows x 6 columns]
+sku         SKU_A  SKU_B  SKU_C
+date                           
+2026-08-01     24     17      4
+2026-08-02     31     18      5
+2026-08-03     36     17     13
+2026-08-04     45     31     23
+2026-08-05     61     27     20
+2026-08-06     50     39     16
+2026-08-07     35     18     13
+2026-08-08     22     17     12
+sku   SKU_A  SKU_B  SKU_C
+mean   40.7   34.4   11.5
+std    12.4   14.1    4.8
+min    18.0   17.0    1.0
+max    89.0  108.0   26.0
+AGENT LOG  (alpha=0.2, review=1d, warm-up=14d, simulated days=76)
+
+2026-08-15 SKU_A | stock  120 (  no arrival) on-order    0 | F= 38.7/d SS= 39.9 | ORDER   75 | projected -35 < SS 40 over next 4d → order 75 (order-up-to S=195) || demand  27 sold  27 lost   0 end   93
+2026-08-15 SKU_B | stock  150 (  no arrival) on-order    0 | F= 25.9/d SS= 36.6 | ORDER   50 | projected -6 < SS 37 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=192) || demand  23 sold  23 lost   0 end  127
+2026-08-15 SKU_C | stock  100 (  no arrival) on-order    0 | F= 11.3/d SS= 12.4 | ORDER   30 | projected 10 < SS 12 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=103) || demand  11 sold  11 lost   0 end   89
+2026-08-16 SKU_A | stock   93 (  no arrival) on-order   75 | F= 36.4/d SS= 39.7 | ORDER   60 | projected 23 < SS 40 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=185) || demand  24 sold  24 lost   0 end   69
+2026-08-16 SKU_B | stock  127 (  no arrival) on-order   50 | F= 25.3/d SS= 35.0 | ORDER   50 | projected 25 < SS 35 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=187) || demand  20 sold  20 lost   0 end  107
+2026-08-16 SKU_C | stock   89 (  no arrival) on-order   30 | F= 11.2/d SS= 11.7 | WAIT     0 | projected 29 ≥ SS 12 over next 8d → wait (saves holding cost) || demand  14 sold  14 lost   0 end   75
+2026-08-17 SKU_A | stock   69 (  no arrival) on-order  135 | F= 33.9/d SS= 39.8 | WAIT     0 | projected 68 ≥ SS 40 over next 4d → wait (saves holding cost) || demand  41 sold  41 lost   0 end   28
+2026-08-17 SKU_B | stock  107 (  no arrival) on-order  100 | F= 24.3/d SS= 33.9 | WAIT     0 | projected 61 ≥ SS 34 over next 6d → wait (saves holding cost) || demand  30 sold  30 lost   0 end   77
+2026-08-17 SKU_C | stock   75 (  no arrival) on-order   30 | F= 11.8/d SS= 11.6 | ORDER   30 | projected 11 < SS 12 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=106) || demand   9 sold   9 lost   0 end   66
+2026-08-18 SKU_A | stock  103 ( +75 arrived) on-order   60 | F= 35.3/d SS= 38.5 | ORDER   60 | projected 22 < SS 38 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=180) || demand  50 sold  50 lost   0 end   53
+2026-08-18 SKU_B | stock   77 (  no arrival) on-order  100 | F= 25.4/d SS= 32.9 | ORDER   50 | projected 24 < SS 33 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=185) || demand  33 sold  33 lost   0 end   44
+2026-08-18 SKU_C | stock   66 (  no arrival) on-order   60 | F= 11.2/d SS= 11.4 | WAIT     0 | projected 36 ≥ SS 11 over next 8d → wait (saves holding cost) || demand  21 sold  21 lost   0 end   45
+2026-08-19 SKU_A | stock  113 ( +60 arrived) on-order   60 | F= 38.3/d SS= 39.6 | ORDER   60 | projected 20 < SS 40 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=193) || demand  67 sold  67 lost   0 end   46
+2026-08-19 SKU_B | stock   44 (  no arrival) on-order  150 | F= 26.9/d SS= 32.7 | ORDER   50 | projected 32 < SS 33 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=194) || demand  39 sold  39 lost   0 end    5
+2026-08-19 SKU_C | stock   45 (  no arrival) on-order   60 | F= 13.2/d SS= 15.6 | ORDER   30 | projected -0 < SS 16 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=121) || demand  11 sold  11 lost   0 end   34
+2026-08-20 SKU_A | stock   46 (  no arrival) on-order  120 | F= 44.0/d SS= 48.0 | ORDER   60 | projected -10 < SS 48 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=224) || demand  50 sold  46 lost   4 end    0
+2026-08-20 SKU_B | stock   55 ( +50 arrived) on-order  150 | F= 29.3/d SS= 34.6 | ORDER   50 | projected 29 < SS 35 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=211) || demand  31 sold  31 lost   0 end   24
+2026-08-20 SKU_C | stock   34 (  no arrival) on-order   90 | F= 12.7/d SS= 15.0 | WAIT     0 | projected 22 ≥ SS 15 over next 8d → wait (saves holding cost) || demand  10 sold  10 lost   0 end   24
+2026-08-21 SKU_A | stock   60 ( +60 arrived) on-order  120 | F= 45.2/d SS= 46.0 | ORDER   60 | projected -1 < SS 46 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=227) || demand  35 sold  35 lost   0 end   25
+2026-08-21 SKU_B | stock   74 ( +50 arrived) on-order  150 | F= 29.7/d SS= 32.9 | WAIT     0 | projected 46 ≥ SS 33 over next 6d → wait (saves holding cost) || demand  26 sold  26 lost   0 end   48
+2026-08-21 SKU_C | stock   24 (  no arrival) on-order   90 | F= 12.2/d SS= 14.6 | WAIT     0 | projected 16 ≥ SS 15 over next 8d → wait (saves holding cost) || demand  11 sold  11 lost   0 end   13
+2026-08-22 SKU_A | stock   85 ( +60 arrived) on-order  120 | F= 43.2/d SS= 44.9 | ORDER   60 | projected 32 < SS 45 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=218) || demand  41 sold  41 lost   0 end   44
+2026-08-22 SKU_B | stock   48 (  no arrival) on-order  150 | F= 28.9/d SS= 31.6 | ORDER   50 | projected 24 < SS 32 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=205) || demand  17 sold  17 lost   0 end   31
+2026-08-22 SKU_C | stock   43 ( +30 arrived) on-order   60 | F= 12.0/d SS= 13.9 | ORDER   30 | projected 7 < SS 14 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=110) || demand  11 sold  11 lost   0 end   32
+2026-08-23 SKU_A | stock  104 ( +60 arrived) on-order  120 | F= 42.7/d SS= 42.6 | WAIT     0 | projected 53 ≥ SS 43 over next 4d → wait (saves holding cost) || demand  32 sold  32 lost   0 end   72
+2026-08-23 SKU_B | stock   81 ( +50 arrived) on-order  150 | F= 26.6/d SS= 33.6 | WAIT     0 | projected 72 ≥ SS 34 over next 6d → wait (saves holding cost) || demand  21 sold  21 lost   0 end   60
+2026-08-23 SKU_C | stock   32 (  no arrival) on-order   90 | F= 11.8/d SS= 13.2 | WAIT     0 | projected 28 ≥ SS 13 over next 8d → wait (saves holding cost) || demand   9 sold   9 lost   0 end   23
+2026-08-24 SKU_A | stock  132 ( +60 arrived) on-order   60 | F= 40.6/d SS= 42.0 | ORDER   60 | projected 30 < SS 42 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=204) || demand  37 sold  37 lost   0 end   95
+2026-08-24 SKU_B | stock  110 ( +50 arrived) on-order  100 | F= 25.4/d SS= 32.7 | WAIT     0 | projected 57 ≥ SS 33 over next 6d → wait (saves holding cost) || demand  31 sold  31 lost   0 end   79
+2026-08-24 SKU_C | stock   53 ( +30 arrived) on-order   60 | F= 11.2/d SS= 12.9 | WAIT     0 | projected 23 ≥ SS 13 over next 8d → wait (saves holding cost) || demand  12 sold  12 lost   0 end   41
+2026-08-25 SKU_A | stock  155 ( +60 arrived) on-order   60 | F= 39.9/d SS= 40.0 | WAIT     0 | projected 56 ≥ SS 40 over next 4d → wait (saves holding cost) || demand  47 sold  47 lost   0 end  108
+2026-08-25 SKU_B | stock  129 ( +50 arrived) on-order   50 | F= 26.6/d SS= 31.8 | ORDER   50 | projected 20 < SS 32 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=191) || demand  34 sold  34 lost   0 end   95
+2026-08-25 SKU_C | stock   41 (  no arrival) on-order   60 | F= 11.4/d SS= 12.3 | ORDER   30 | projected 10 < SS 12 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=103) || demand  11 sold  11 lost   0 end   30
+2026-08-26 SKU_A | stock  108 (  no arrival) on-order   60 | F= 41.3/d SS= 38.7 | ORDER   60 | projected 3 < SS 39 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=204) || demand  41 sold  41 lost   0 end   67
+2026-08-26 SKU_B | stock   95 (  no arrival) on-order  100 | F= 28.0/d SS= 31.6 | ORDER   50 | projected 27 < SS 32 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=200) || demand  42 sold  42 lost   0 end   53
+2026-08-26 SKU_C | stock   60 ( +30 arrived) on-order   60 | F= 11.3/d SS= 11.7 | WAIT     0 | projected 30 ≥ SS 12 over next 8d → wait (saves holding cost) || demand  10 sold  10 lost   0 end   50
+2026-08-27 SKU_A | stock  127 ( +60 arrived) on-order   60 | F= 41.2/d SS= 36.7 | ORDER   60 | projected 22 < SS 37 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=202) || demand  35 sold  35 lost   0 end   92
+2026-08-27 SKU_B | stock  103 ( +50 arrived) on-order  100 | F= 30.8/d SS= 34.9 | ORDER   50 | projected 18 < SS 35 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=220) || demand  26 sold  26 lost   0 end   77
+2026-08-27 SKU_C | stock   50 (  no arrival) on-order   60 | F= 11.0/d SS= 11.2 | WAIT     0 | projected 22 ≥ SS 11 over next 8d → wait (saves holding cost) || demand  14 sold  14 lost   0 end   36
+2026-08-28 SKU_A | stock   92 (  no arrival) on-order  120 | F= 40.0/d SS= 35.4 | WAIT     0 | projected 52 ≥ SS 35 over next 4d → wait (saves holding cost) || demand  59 sold  59 lost   0 end   33
+2026-08-28 SKU_B | stock   77 (  no arrival) on-order  150 | F= 29.9/d SS= 33.6 | WAIT     0 | projected 48 ≥ SS 34 over next 6d → wait (saves holding cost) || demand  25 sold  25 lost   0 end   52
+2026-08-28 SKU_C | stock   36 (  no arrival) on-order   60 | F= 11.6/d SS= 11.1 | ORDER   30 | projected 3 < SS 11 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=104) || demand   1 sold   1 lost   0 end   35
+2026-08-29 SKU_A | stock   93 ( +60 arrived) on-order   60 | F= 43.8/d SS= 39.0 | ORDER   62 | projected -22 < SS 39 over next 4d → order 62 (order-up-to S=214) || demand  34 sold  34 lost   0 end   59
+2026-08-29 SKU_B | stock   52 (  no arrival) on-order  150 | F= 28.9/d SS= 32.5 | ORDER   50 | projected 29 < SS 33 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=206) || demand  23 sold  23 lost   0 end   29
+2026-08-29 SKU_C | stock   65 ( +30 arrived) on-order   60 | F=  9.5/d SS= 16.1 | WAIT     0 | projected 49 ≥ SS 16 over next 8d → wait (saves holding cost) || demand   6 sold   6 lost   0 end   59
+2026-08-30 SKU_A | stock  119 ( +60 arrived) on-order   62 | F= 41.8/d SS= 38.3 | ORDER   60 | projected 14 < SS 38 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=206) || demand  27 sold  27 lost   0 end   92
+2026-08-30 SKU_B | stock   79 ( +50 arrived) on-order  150 | F= 27.7/d SS= 31.7 | WAIT     0 | projected 63 ≥ SS 32 over next 6d → wait (saves holding cost) || demand  20 sold  20 lost   0 end   59
+2026-08-30 SKU_C | stock   59 (  no arrival) on-order   60 | F=  8.8/d SS= 15.8 | WAIT     0 | projected 49 ≥ SS 16 over next 8d → wait (saves holding cost) || demand  12 sold  12 lost   0 end   47
+2026-08-31 SKU_A | stock   92 (  no arrival) on-order  122 | F= 38.9/d SS= 39.5 | WAIT     0 | projected 59 ≥ SS 40 over next 4d → wait (saves holding cost) || demand  41 sold  41 lost   0 end   51
+2026-08-31 SKU_B | stock  109 ( +50 arrived) on-order  100 | F= 26.2/d SS= 31.7 | WAIT     0 | projected 52 ≥ SS 32 over next 6d → wait (saves holding cost) || demand  29 sold  29 lost   0 end   80
+2026-08-31 SKU_C | stock   47 (  no arrival) on-order   60 | F=  9.4/d SS= 15.5 | WAIT     0 | projected 31 ≥ SS 15 over next 8d → wait (saves holding cost) || demand   9 sold   9 lost   0 end   38
+2026-09-01 SKU_A | stock  113 ( +62 arrived) on-order   60 | F= 39.3/d SS= 37.5 | ORDER   60 | projected 16 < SS 38 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=195) || demand  55 sold  55 lost   0 end   58
+2026-09-01 SKU_B | stock  130 ( +50 arrived) on-order   50 | F= 26.7/d SS= 30.3 | ORDER   50 | projected 20 < SS 30 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=191) || demand  29 sold  29 lost   0 end  101
+2026-09-01 SKU_C | stock   68 ( +30 arrived) on-order   30 | F=  9.4/d SS= 14.7 | WAIT     0 | projected 23 ≥ SS 15 over next 8d → wait (saves holding cost) || demand  19 sold  19 lost   0 end   49
+2026-09-02 SKU_A | stock  118 ( +60 arrived) on-order   60 | F= 42.4/d SS= 39.2 | ORDER   60 | projected 8 < SS 39 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=209) || demand  46 sold  46 lost   0 end   72
+2026-09-02 SKU_B | stock  101 (  no arrival) on-order  100 | F= 27.2/d SS= 28.9 | WAIT     0 | projected 38 ≥ SS 29 over next 6d → wait (saves holding cost) || demand  49 sold  49 lost   0 end   52
+2026-09-02 SKU_C | stock   49 (  no arrival) on-order   30 | F= 11.3/d SS= 17.8 | ORDER   30 | projected -11 < SS 18 over next 8d → order 30 (order-up-to S=108) || demand  10 sold  10 lost   0 end   39
+2026-09-03 SKU_A | stock   72 (  no arrival) on-order  120 | F= 43.1/d SS= 37.4 | ORDER   60 | projected 19 < SS 37 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=210) || demand  40 sold  40 lost   0 end   32
+2026-09-03 SKU_B | stock  102 ( +50 arrived) on-order   50 | F= 31.6/d SS= 39.0 | ORDER   77 | projected -37 < SS 39 over next 6d → order 77 (order-up-to S=228) || demand  62 sold  62 lost   0 end   40
+2026-09-03 SKU_C | stock   39 (  no arrival) on-order   60 | F= 11.0/d SS= 16.9 | ORDER   30 | projected 11 < SS 17 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=105) || demand  10 sold  10 lost   0 end   29
+2026-09-04 SKU_A | stock   92 ( +60 arrived) on-order  120 | F= 42.5/d SS= 35.6 | WAIT     0 | projected 42 ≥ SS 36 over next 4d → wait (saves holding cost) || demand  29 sold  29 lost   0 end   63
+2026-09-04 SKU_B | stock   40 (  no arrival) on-order  127 | F= 37.6/d SS= 53.6 | ORDER  113 | projected -59 < SS 54 over next 6d → order 113 (order-up-to S=279) || demand  19 sold  19 lost   0 end   21
+2026-09-04 SKU_C | stock   59 ( +30 arrived) on-order   60 | F= 10.8/d SS= 16.1 | WAIT     0 | projected 32 ≥ SS 16 over next 8d → wait (saves holding cost) || demand  12 sold  12 lost   0 end   47
+2026-09-05 SKU_A | stock  123 ( +60 arrived) on-order   60 | F= 39.8/d SS= 36.6 | ORDER   60 | projected 24 < SS 37 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=196) || demand  38 sold  38 lost   0 end   85
+2026-09-05 SKU_B | stock   21 (  no arrival) on-order  240 | F= 33.9/d SS= 56.1 | WAIT     0 | projected 58 ≥ SS 56 over next 6d → wait (saves holding cost) || demand  24 sold  21 lost   3 end    0
+2026-09-05 SKU_C | stock   47 (  no arrival) on-order   60 | F= 11.1/d SS= 15.3 | WAIT     0 | projected 19 ≥ SS 15 over next 8d → wait (saves holding cost) || demand   6 sold   6 lost   0 end   41
+2026-09-06 SKU_A | stock  145 ( +60 arrived) on-order   60 | F= 39.5/d SS= 34.8 | WAIT     0 | projected 47 ≥ SS 35 over next 4d → wait (saves holding cost) || demand  40 sold  40 lost   0 end  105
+2026-09-06 SKU_B | stock   50 ( +50 arrived) on-order  190 | F= 31.9/d SS= 54.7 | ORDER   50 | projected 48 < SS 55 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=246) || demand  28 sold  28 lost   0 end   22
+2026-09-06 SKU_C | stock   41 (  no arrival) on-order   60 | F= 10.0/d SS= 15.7 | WAIT     0 | projected 21 ≥ SS 16 over next 8d → wait (saves holding cost) || demand  10 sold  10 lost   0 end   31
+2026-09-07 SKU_A | stock  105 (  no arrival) on-order   60 | F= 39.6/d SS= 33.0 | ORDER   60 | projected 7 < SS 33 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=191) || demand  40 sold  40 lost   0 end   65
+2026-09-07 SKU_B | stock   22 (  no arrival) on-order  240 | F= 31.1/d SS= 52.2 | WAIT     0 | projected 75 ≥ SS 52 over next 6d → wait (saves holding cost) || demand  28 sold  22 lost   6 end    0
+2026-09-07 SKU_C | stock   31 (  no arrival) on-order   60 | F= 10.0/d SS= 14.9 | ORDER   30 | projected 11 < SS 15 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=95) || demand  13 sold  13 lost   0 end   18
+2026-09-08 SKU_A | stock  125 ( +60 arrived) on-order   60 | F= 39.6/d SS= 31.3 | ORDER   60 | projected 26 < SS 31 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=190) || demand  54 sold  54 lost   0 end   71
+2026-09-08 SKU_B | stock   77 ( +77 arrived) on-order  163 | F= 30.5/d SS= 49.6 | WAIT     0 | projected 57 ≥ SS 50 over next 6d → wait (saves holding cost) || demand  49 sold  49 lost   0 end   28
+2026-09-08 SKU_C | stock   18 (  no arrival) on-order   90 | F= 10.6/d SS= 14.5 | WAIT     0 | projected 23 ≥ SS 14 over next 8d → wait (saves holding cost) || demand   8 sold   8 lost   0 end   10
+2026-09-09 SKU_A | stock   71 (  no arrival) on-order  120 | F= 42.5/d SS= 33.2 | ORDER   60 | projected 21 < SS 33 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=203) || demand  47 sold  47 lost   0 end   24
+2026-09-09 SKU_B | stock  141 (+113 arrived) on-order   50 | F= 34.2/d SS= 52.7 | ORDER   67 | projected -14 < SS 53 over next 6d → order 67 (order-up-to S=258) || demand  44 sold  44 lost   0 end   97
+2026-09-09 SKU_C | stock   40 ( +30 arrived) on-order   60 | F= 10.1/d SS= 14.1 | WAIT     0 | projected 19 ≥ SS 14 over next 8d → wait (saves holding cost) || demand  13 sold  13 lost   0 end   27
+2026-09-10 SKU_A | stock   84 ( +60 arrived) on-order  120 | F= 43.4/d SS= 31.9 | ORDER   60 | projected 30 < SS 32 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=206) || demand  49 sold  49 lost   0 end   35
+2026-09-10 SKU_B | stock   97 (  no arrival) on-order  117 | F= 36.2/d SS= 51.5 | ORDER   55 | projected -3 < SS 51 over next 6d → order 55 (order-up-to S=269) || demand  47 sold  47 lost   0 end   50
+2026-09-10 SKU_C | stock   57 ( +30 arrived) on-order   30 | F= 10.7/d SS= 13.8 | ORDER   30 | projected 2 < SS 14 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=99) || demand  16 sold  16 lost   0 end   41
+2026-09-11 SKU_A | stock   95 ( +60 arrived) on-order  120 | F= 44.5/d SS= 30.8 | WAIT     0 | projected 37 ≥ SS 31 over next 4d → wait (saves holding cost) || demand  47 sold  47 lost   0 end   48
+2026-09-11 SKU_B | stock  100 ( +50 arrived) on-order  122 | F= 38.3/d SS= 50.8 | ORDER   59 | projected -8 < SS 51 over next 6d → order 59 (order-up-to S=281) || demand  24 sold  24 lost   0 end   76
+2026-09-11 SKU_C | stock   41 (  no arrival) on-order   60 | F= 11.7/d SS= 14.4 | ORDER   30 | projected 7 < SS 14 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=108) || demand   9 sold   9 lost   0 end   32
+2026-09-12 SKU_A | stock  108 ( +60 arrived) on-order   60 | F= 45.0/d SS= 29.3 | ORDER   60 | projected -12 < SS 29 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=209) || demand  23 sold  23 lost   0 end   85
+2026-09-12 SKU_B | stock   76 (  no arrival) on-order  181 | F= 35.5/d SS= 51.5 | ORDER   50 | projected 44 < SS 52 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=264) || demand  20 sold  20 lost   0 end   56
+2026-09-12 SKU_C | stock   32 (  no arrival) on-order   90 | F= 11.2/d SS= 14.0 | WAIT     0 | projected 32 ≥ SS 14 over next 8d → wait (saves holding cost) || demand   4 sold   4 lost   0 end   28
+2026-09-13 SKU_A | stock  145 ( +60 arrived) on-order   60 | F= 40.6/d SS= 36.0 | WAIT     0 | projected 43 ≥ SS 36 over next 4d → wait (saves holding cost) || demand  25 sold  25 lost   0 end  120
+2026-09-13 SKU_B | stock   56 (  no arrival) on-order  231 | F= 32.4/d SS= 52.7 | WAIT     0 | projected 93 ≥ SS 53 over next 6d → wait (saves holding cost) || demand  21 sold  21 lost   0 end   35
+2026-09-13 SKU_C | stock   28 (  no arrival) on-order   90 | F=  9.8/d SS= 15.7 | WAIT     0 | projected 40 ≥ SS 16 over next 8d → wait (saves holding cost) || demand   7 sold   7 lost   0 end   21
+2026-09-14 SKU_A | stock  120 (  no arrival) on-order   60 | F= 37.5/d SS= 37.9 | ORDER   60 | projected 30 < SS 38 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=188) || demand  42 sold  42 lost   0 end   78
+2026-09-14 SKU_B | stock  102 ( +67 arrived) on-order  164 | F= 30.1/d SS= 52.0 | WAIT     0 | projected 85 ≥ SS 52 over next 6d → wait (saves holding cost) || demand  32 sold  32 lost   0 end   70
+2026-09-14 SKU_C | stock   51 ( +30 arrived) on-order   60 | F=  9.2/d SS= 15.2 | WAIT     0 | projected 37 ≥ SS 15 over next 8d → wait (saves holding cost) || demand   7 sold   7 lost   0 end   44
+2026-09-15 SKU_A | stock  138 ( +60 arrived) on-order   60 | F= 38.4/d SS= 36.2 | WAIT     0 | projected 44 ≥ SS 36 over next 4d → wait (saves holding cost) || demand  41 sold  41 lost   0 end   97
+2026-09-15 SKU_B | stock  125 ( +55 arrived) on-order  109 | F= 30.5/d SS= 49.4 | WAIT     0 | projected 51 ≥ SS 49 over next 6d → wait (saves holding cost) || demand  53 sold  53 lost   0 end   72
+2026-09-15 SKU_C | stock   44 (  no arrival) on-order   60 | F=  8.8/d SS= 14.6 | WAIT     0 | projected 34 ≥ SS 15 over next 8d → wait (saves holding cost) || demand  10 sold  10 lost   0 end   34
+2026-09-16 SKU_A | stock   97 (  no arrival) on-order   60 | F= 38.9/d SS= 34.5 | ORDER   60 | projected 1 < SS 34 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=190) || demand  50 sold  50 lost   0 end   47
+2026-09-16 SKU_B | stock  131 ( +59 arrived) on-order   50 | F= 35.0/d SS= 55.0 | ORDER   84 | projected -29 < SS 55 over next 6d → order 84 (order-up-to S=265) || demand  34 sold  34 lost   0 end   97
+2026-09-16 SKU_C | stock   34 (  no arrival) on-order   60 | F=  9.0/d SS= 13.9 | WAIT     0 | projected 22 ≥ SS 14 over next 8d → wait (saves holding cost) || demand  18 sold  18 lost   0 end   16
+2026-09-17 SKU_A | stock  107 ( +60 arrived) on-order   60 | F= 41.1/d SS= 34.7 | ORDER   60 | projected 2 < SS 35 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=199) || demand  36 sold  36 lost   0 end   71
+2026-09-17 SKU_B | stock  147 ( +50 arrived) on-order   84 | F= 34.8/d SS= 52.2 | ORDER   50 | projected 22 < SS 52 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=261) || demand  44 sold  44 lost   0 end  103
+2026-09-17 SKU_C | stock   46 ( +30 arrived) on-order   30 | F= 10.8/d SS= 16.8 | ORDER   30 | projected -10 < SS 17 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=103) || demand  14 sold  14 lost   0 end   32
+2026-09-18 SKU_A | stock   71 (  no arrival) on-order  120 | F= 40.1/d SS= 33.3 | ORDER   60 | projected 31 < SS 33 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=194) || demand  27 sold  27 lost   0 end   44
+2026-09-18 SKU_B | stock  103 (  no arrival) on-order  134 | F= 36.6/d SS= 50.9 | ORDER   50 | projected 17 < SS 51 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=271) || demand  28 sold  28 lost   0 end   75
+2026-09-18 SKU_C | stock   62 ( +30 arrived) on-order   30 | F= 11.4/d SS= 16.3 | ORDER   30 | projected 0 < SS 16 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=108) || demand   9 sold   9 lost   0 end   53
+2026-09-19 SKU_A | stock  104 ( +60 arrived) on-order  120 | F= 37.5/d SS= 34.4 | WAIT     0 | projected 74 ≥ SS 34 over next 4d → wait (saves holding cost) || demand  33 sold  33 lost   0 end   71
+2026-09-19 SKU_B | stock   75 (  no arrival) on-order  184 | F= 34.9/d SS= 49.5 | WAIT     0 | projected 50 ≥ SS 49 over next 6d → wait (saves holding cost) || demand  26 sold  26 lost   0 end   49
+2026-09-19 SKU_C | stock   53 (  no arrival) on-order   60 | F= 11.0/d SS= 15.7 | WAIT     0 | projected 25 ≥ SS 16 over next 8d → wait (saves holding cost) || demand  10 sold  10 lost   0 end   43
+2026-09-20 SKU_A | stock  131 ( +60 arrived) on-order   60 | F= 36.6/d SS= 33.0 | WAIT     0 | projected 45 ≥ SS 33 over next 4d → wait (saves holding cost) || demand  27 sold  27 lost   0 end  104
+2026-09-20 SKU_B | stock   49 (  no arrival) on-order  184 | F= 33.1/d SS= 48.3 | ORDER   50 | projected 34 < SS 48 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=247) || demand  24 sold  24 lost   0 end   25
+2026-09-20 SKU_C | stock   43 (  no arrival) on-order   60 | F= 10.8/d SS= 15.0 | WAIT     0 | projected 17 ≥ SS 15 over next 8d → wait (saves holding cost) || demand   6 sold   6 lost   0 end   37
+2026-09-21 SKU_A | stock  164 ( +60 arrived) on-order    0 | F= 34.7/d SS= 32.8 | ORDER   60 | projected 25 < SS 33 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=172) || demand  78 sold  78 lost   0 end   86
+2026-09-21 SKU_B | stock  109 ( +84 arrived) on-order  150 | F= 31.3/d SS= 47.3 | WAIT     0 | projected 71 ≥ SS 47 over next 6d → wait (saves holding cost) || demand  35 sold  35 lost   0 end   74
+2026-09-21 SKU_C | stock   37 (  no arrival) on-order   60 | F=  9.8/d SS= 15.2 | WAIT     0 | projected 18 ≥ SS 15 over next 8d → wait (saves holding cost) || demand  14 sold  14 lost   0 end   23
+2026-09-22 SKU_A | stock   86 (  no arrival) on-order   60 | F= 43.3/d SS= 54.8 | ORDER   83 | projected -27 < SS 55 over next 4d → order 83 (order-up-to S=228) || demand  39 sold  39 lost   0 end   47
+2026-09-22 SKU_B | stock  124 ( +50 arrived) on-order  100 | F= 32.0/d SS= 45.1 | ORDER   50 | projected 32 < SS 45 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=237) || demand  42 sold  42 lost   0 end   82
+2026-09-22 SKU_C | stock   23 (  no arrival) on-order   60 | F= 10.7/d SS= 15.2 | ORDER   30 | projected -2 < SS 15 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=100) || demand  12 sold  12 lost   0 end   11
+2026-09-23 SKU_A | stock   47 (  no arrival) on-order  143 | F= 42.5/d SS= 52.2 | ORDER   60 | projected 20 < SS 52 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=222) || demand  63 sold  47 lost  16 end    0
+2026-09-23 SKU_B | stock  132 ( +50 arrived) on-order  100 | F= 34.0/d SS= 44.6 | ORDER   50 | projected 28 < SS 45 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=249) || demand  41 sold  41 lost   0 end   91
+2026-09-23 SKU_C | stock   11 (  no arrival) on-order   90 | F= 10.9/d SS= 14.5 | ORDER   30 | projected 14 < SS 15 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=102) || demand  20 sold  11 lost   9 end    0
+2026-09-24 SKU_A | stock   60 ( +60 arrived) on-order  143 | F= 46.6/d SS= 53.9 | ORDER   60 | projected 17 < SS 54 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=240) || demand  40 sold  40 lost   0 end   20
+2026-09-24 SKU_B | stock   91 (  no arrival) on-order  150 | F= 35.4/d SS= 43.3 | ORDER   50 | projected 28 < SS 43 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=256) || demand  40 sold  40 lost   0 end   51
+2026-09-24 SKU_C | stock   30 ( +30 arrived) on-order   90 | F= 12.7/d SS= 17.3 | WAIT     0 | projected 18 ≥ SS 17 over next 8d → wait (saves holding cost) || demand  15 sold  15 lost   0 end   15
+2026-09-25 SKU_A | stock  103 ( +83 arrived) on-order  120 | F= 45.3/d SS= 51.6 | ORDER   60 | projected 42 < SS 52 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=233) || demand  32 sold  32 lost   0 end   71
+2026-09-25 SKU_B | stock  101 ( +50 arrived) on-order  150 | F= 36.3/d SS= 41.4 | ORDER   50 | projected 33 < SS 41 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=259) || demand  28 sold  28 lost   0 end   73
+2026-09-25 SKU_C | stock   45 ( +30 arrived) on-order   60 | F= 13.2/d SS= 16.6 | ORDER   30 | projected -1 < SS 17 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=122) || demand   5 sold   5 lost   0 end   40
+2026-09-26 SKU_A | stock  131 ( +60 arrived) on-order  120 | F= 42.6/d SS= 50.9 | WAIT     0 | projected 81 ≥ SS 51 over next 4d → wait (saves holding cost) || demand  32 sold  32 lost   0 end   99
+2026-09-26 SKU_B | stock   73 (  no arrival) on-order  200 | F= 34.7/d SS= 40.7 | WAIT     0 | projected 65 ≥ SS 41 over next 6d → wait (saves holding cost) || demand  24 sold  24 lost   0 end   49
+2026-09-26 SKU_C | stock   40 (  no arrival) on-order   90 | F= 11.6/d SS= 18.3 | WAIT     0 | projected 38 ≥ SS 18 over next 8d → wait (saves holding cost) || demand   3 sold   3 lost   0 end   37
+2026-09-27 SKU_A | stock  159 ( +60 arrived) on-order   60 | F= 40.5/d SS= 49.5 | WAIT     0 | projected 57 ≥ SS 49 over next 4d → wait (saves holding cost) || demand  25 sold  25 lost   0 end  134
+2026-09-27 SKU_B | stock   99 ( +50 arrived) on-order  150 | F= 32.5/d SS= 41.0 | WAIT     0 | projected 54 ≥ SS 41 over next 6d → wait (saves holding cost) || demand  34 sold  34 lost   0 end   65
+2026-09-27 SKU_C | stock   37 (  no arrival) on-order   90 | F=  9.8/d SS= 20.0 | WAIT     0 | projected 48 ≥ SS 20 over next 8d → wait (saves holding cost) || demand   6 sold   6 lost   0 end   31
+2026-09-28 SKU_A | stock  194 ( +60 arrived) on-order    0 | F= 37.4/d SS= 49.6 | ORDER   60 | projected 44 < SS 50 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=199) || demand  52 sold  52 lost   0 end  142
+2026-09-28 SKU_B | stock  115 ( +50 arrived) on-order  100 | F= 32.8/d SS= 38.9 | ORDER   50 | projected 18 < SS 39 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=236) || demand  33 sold  33 lost   0 end   82
+2026-09-28 SKU_C | stock   31 (  no arrival) on-order   90 | F=  9.1/d SS= 19.4 | WAIT     0 | projected 48 ≥ SS 19 over next 8d → wait (saves holding cost) || demand  17 sold  17 lost   0 end   14
+2026-09-29 SKU_A | stock  142 (  no arrival) on-order   60 | F= 40.3/d SS= 49.5 | ORDER   60 | projected 41 < SS 49 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=211) || demand  47 sold  47 lost   0 end   95
+2026-09-29 SKU_B | stock  132 ( +50 arrived) on-order  100 | F= 32.9/d SS= 36.9 | ORDER   50 | projected 35 < SS 37 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=234) || demand  47 sold  47 lost   0 end   85
+2026-09-29 SKU_C | stock   44 ( +30 arrived) on-order   60 | F= 10.7/d SS= 20.6 | ORDER   30 | projected 19 < SS 21 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=106) || demand  16 sold  16 lost   0 end   28
+2026-09-30 SKU_A | stock   95 (  no arrival) on-order  120 | F= 41.6/d SS= 47.5 | WAIT     0 | projected 48 ≥ SS 47 over next 4d → wait (saves holding cost) || demand  57 sold  57 lost   0 end   38
+2026-09-30 SKU_B | stock  135 ( +50 arrived) on-order  100 | F= 35.7/d SS= 39.4 | ORDER   50 | projected 21 < SS 39 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=254) || demand  51 sold  51 lost   0 end   84
+2026-09-30 SKU_C | stock   58 ( +30 arrived) on-order   60 | F= 11.7/d SS= 20.4 | WAIT     0 | projected 24 ≥ SS 20 over next 8d → wait (saves holding cost) || demand  12 sold  12 lost   0 end   46
+2026-10-01 SKU_A | stock   98 ( +60 arrived) on-order   60 | F= 44.7/d SS= 47.8 | ORDER   69 | projected -21 < SS 48 over next 4d → order 69 (order-up-to S=227) || demand  39 sold  39 lost   0 end   59
+2026-10-01 SKU_B | stock   84 (  no arrival) on-order  150 | F= 38.8/d SS= 42.1 | ORDER   50 | projected 1 < SS 42 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=275) || demand  39 sold  39 lost   0 end   45
+2026-10-01 SKU_C | stock   46 (  no arrival) on-order   60 | F= 11.8/d SS= 19.4 | ORDER   30 | projected 12 < SS 19 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=114) || demand  14 sold  14 lost   0 end   32
+2026-10-02 SKU_A | stock  119 ( +60 arrived) on-order   69 | F= 43.6/d SS= 45.7 | ORDER   60 | projected 14 < SS 46 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=220) || demand  37 sold  37 lost   0 end   82
+2026-10-02 SKU_B | stock   45 (  no arrival) on-order  200 | F= 38.8/d SS= 40.0 | ORDER   50 | projected 12 < SS 40 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=273) || demand  29 sold  29 lost   0 end   16
+2026-10-02 SKU_C | stock   62 ( +30 arrived) on-order   60 | F= 12.2/d SS= 18.6 | WAIT     0 | projected 24 ≥ SS 19 over next 8d → wait (saves holding cost) || demand  15 sold  15 lost   0 end   47
+2026-10-03 SKU_A | stock   82 (  no arrival) on-order  129 | F= 42.3/d SS= 43.9 | ORDER   60 | projected 42 < SS 44 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=213) || demand  32 sold  32 lost   0 end   50
+2026-10-03 SKU_B | stock   66 ( +50 arrived) on-order  200 | F= 36.8/d SS= 39.9 | WAIT     0 | projected 45 ≥ SS 40 over next 6d → wait (saves holding cost) || demand  31 sold  31 lost   0 end   35
+2026-10-03 SKU_C | stock   47 (  no arrival) on-order   60 | F= 12.8/d SS= 17.9 | ORDER   30 | projected 5 < SS 18 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=120) || demand   6 sold   6 lost   0 end   41
+2026-10-04 SKU_A | stock  119 ( +69 arrived) on-order  120 | F= 40.2/d SS= 43.0 | WAIT     0 | projected 78 ≥ SS 43 over next 4d → wait (saves holding cost) || demand  30 sold  30 lost   0 end   89
+2026-10-04 SKU_B | stock   85 ( +50 arrived) on-order  150 | F= 35.7/d SS= 38.6 | ORDER   50 | projected 21 < SS 39 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=253) || demand  28 sold  28 lost   0 end   57
+2026-10-04 SKU_C | stock   41 (  no arrival) on-order   90 | F= 11.4/d SS= 18.7 | WAIT     0 | projected 40 ≥ SS 19 over next 8d → wait (saves holding cost) || demand   7 sold   7 lost   0 end   34
+2026-10-05 SKU_A | stock  149 ( +60 arrived) on-order   60 | F= 38.2/d SS= 42.1 | WAIT     0 | projected 56 ≥ SS 42 over next 4d → wait (saves holding cost) || demand  43 sold  43 lost   0 end  106
+2026-10-05 SKU_B | stock  107 ( +50 arrived) on-order  150 | F= 34.1/d SS= 37.9 | WAIT     0 | projected 52 ≥ SS 38 over next 6d → wait (saves holding cost) || demand  44 sold  44 lost   0 end   63
+2026-10-05 SKU_C | stock   34 (  no arrival) on-order   90 | F= 10.5/d SS= 18.4 | WAIT     0 | projected 40 ≥ SS 18 over next 8d → wait (saves holding cost) || demand  12 sold  12 lost   0 end   22
+2026-10-06 SKU_A | stock  166 ( +60 arrived) on-order    0 | F= 39.1/d SS= 40.3 | ORDER   60 | projected 9 < SS 40 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=197) || demand  47 sold  47 lost   0 end  119
+2026-10-06 SKU_B | stock  113 ( +50 arrived) on-order  100 | F= 36.1/d SS= 38.1 | ORDER   50 | projected -4 < SS 38 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=255) || demand  52 sold  52 lost   0 end   61
+2026-10-06 SKU_C | stock   52 ( +30 arrived) on-order   60 | F= 10.8/d SS= 17.6 | WAIT     0 | projected 25 ≥ SS 18 over next 8d → wait (saves holding cost) || demand  12 sold  12 lost   0 end   40
+2026-10-07 SKU_A | stock  119 (  no arrival) on-order   60 | F= 40.7/d SS= 39.1 | ORDER   60 | projected 16 < SS 39 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=202) || demand  44 sold  44 lost   0 end   75
+2026-10-07 SKU_B | stock  111 ( +50 arrived) on-order  100 | F= 39.3/d SS= 41.4 | ORDER   67 | projected -25 < SS 41 over next 6d → order 67 (order-up-to S=277) || demand 108 sold 108 lost   0 end    3
+2026-10-07 SKU_C | stock   40 (  no arrival) on-order   60 | F= 11.1/d SS= 16.7 | ORDER   30 | projected 11 < SS 17 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=105) || demand  12 sold  12 lost   0 end   28
+2026-10-08 SKU_A | stock   75 (  no arrival) on-order  120 | F= 41.4/d SS= 37.2 | ORDER   60 | projected 30 < SS 37 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=203) || demand  89 sold  75 lost  14 end    0
+2026-10-08 SKU_B | stock    3 (  no arrival) on-order  167 | F= 53.0/d SS= 96.0 | ORDER  245 | projected -148 < SS 96 over next 6d → order 245 (order-up-to S=414) || demand  37 sold   3 lost  34 end    0
+2026-10-08 SKU_C | stock   58 ( +30 arrived) on-order   60 | F= 11.3/d SS= 15.9 | WAIT     0 | projected 28 ≥ SS 16 over next 8d → wait (saves holding cost) || demand  24 sold  24 lost   0 end   34
+2026-10-09 SKU_A | stock   60 ( +60 arrived) on-order  120 | F= 50.9/d SS= 60.9 | ORDER   85 | projected -24 < SS 61 over next 4d → order 85 (order-up-to S=264) || demand  24 sold  24 lost   0 end   36
+2026-10-09 SKU_B | stock   50 ( +50 arrived) on-order  362 | F= 49.8/d SS= 93.3 | WAIT     0 | projected 113 ≥ SS 93 over next 6d → wait (saves holding cost) || demand  24 sold  24 lost   0 end   26
+2026-10-09 SKU_C | stock   34 (  no arrival) on-order   60 | F= 13.8/d SS= 21.0 | ORDER   38 | projected -16 < SS 21 over next 8d → order 38 (order-up-to S=131) || demand  11 sold  11 lost   0 end   23
+2026-10-10 SKU_A | stock   96 ( +60 arrived) on-order  145 | F= 45.5/d SS= 64.2 | ORDER   60 | projected 59 < SS 64 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=246) || demand  27 sold  27 lost   0 end   69
+2026-10-10 SKU_B | stock   26 (  no arrival) on-order  362 | F= 44.7/d SS= 94.4 | WAIT     0 | projected 120 ≥ SS 94 over next 6d → wait (saves holding cost) || demand  38 sold  26 lost  12 end    0
+2026-10-10 SKU_C | stock   53 ( +30 arrived) on-order   68 | F= 13.2/d SS= 20.2 | ORDER   30 | projected 15 < SS 20 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=126) || demand   7 sold   7 lost   0 end   46
+2026-10-11 SKU_A | stock  129 ( +60 arrived) on-order  145 | F= 41.8/d SS= 63.8 | WAIT     0 | projected 107 ≥ SS 64 over next 4d → wait (saves holding cost) || demand  42 sold  42 lost   0 end   87
+2026-10-11 SKU_B | stock   50 ( +50 arrived) on-order  312 | F= 43.3/d SS= 90.0 | WAIT     0 | projected 102 ≥ SS 90 over next 6d → wait (saves holding cost) || demand  27 sold  27 lost   0 end   23
+2026-10-11 SKU_C | stock   46 (  no arrival) on-order   98 | F= 12.0/d SS= 20.4 | WAIT     0 | projected 48 ≥ SS 20 over next 8d → wait (saves holding cost) || demand   9 sold   9 lost   0 end   37
+2026-10-12 SKU_A | stock  172 ( +85 arrived) on-order   60 | F= 41.8/d SS= 60.6 | WAIT     0 | projected 65 ≥ SS 61 over next 4d → wait (saves holding cost) || demand  36 sold  36 lost   0 end  136
+2026-10-12 SKU_B | stock   90 ( +67 arrived) on-order  245 | F= 40.1/d SS= 87.9 | WAIT     0 | projected 95 ≥ SS 88 over next 6d → wait (saves holding cost) || demand  55 sold  55 lost   0 end   35
+2026-10-12 SKU_C | stock   37 (  no arrival) on-order   98 | F= 11.4/d SS= 19.7 | WAIT     0 | projected 44 ≥ SS 20 over next 8d → wait (saves holding cost) || demand   8 sold   8 lost   0 end   29
+2026-10-13 SKU_A | stock  196 ( +60 arrived) on-order    0 | F= 40.7/d SS= 57.8 | ORDER   60 | projected 33 < SS 58 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=220) || demand  38 sold  38 lost   0 end  158
+2026-10-13 SKU_B | stock  280 (+245 arrived) on-order    0 | F= 43.0/d SS= 85.5 | ORDER   64 | projected 22 < SS 86 over next 6d → order 64 (order-up-to S=344) || demand  33 sold  33 lost   0 end  247
+2026-10-13 SKU_C | stock   29 (  no arrival) on-order   98 | F= 10.7/d SS= 19.1 | WAIT     0 | projected 41 ≥ SS 19 over next 8d → wait (saves holding cost) || demand  26 sold  26 lost   0 end    3
+2026-10-14 SKU_A | stock  158 (  no arrival) on-order   60 | F= 40.1/d SS= 54.9 | WAIT     0 | projected 57 ≥ SS 55 over next 4d → wait (saves holding cost) || demand  35 sold  35 lost   0 end  123
+2026-10-14 SKU_B | stock  247 (  no arrival) on-order   64 | F= 41.0/d SS= 82.1 | ORDER   50 | projected 65 < SS 82 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=328) || demand  39 sold  39 lost   0 end  208
+2026-10-14 SKU_C | stock   33 ( +30 arrived) on-order   68 | F= 13.8/d SS= 25.2 | ORDER   35 | projected -9 < SS 25 over next 8d → order 35 (order-up-to S=135) || demand  22 sold  22 lost   0 end   11
+2026-10-15 SKU_A | stock  123 (  no arrival) on-order   60 | F= 39.1/d SS= 52.3 | ORDER   60 | projected 27 < SS 52 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=209) || demand  30 sold  30 lost   0 end   93
+2026-10-15 SKU_B | stock  208 (  no arrival) on-order  114 | F= 40.6/d SS= 77.9 | WAIT     0 | projected 78 ≥ SS 78 over next 6d → wait (saves holding cost) || demand  46 sold  46 lost   0 end  162
+2026-10-15 SKU_C | stock   11 (  no arrival) on-order  103 | F= 15.4/d SS= 25.7 | ORDER   36 | projected -9 < SS 26 over next 8d → order 36 (order-up-to S=149) || demand   9 sold   9 lost   0 end    2
+2026-10-16 SKU_A | stock  153 ( +60 arrived) on-order   60 | F= 37.3/d SS= 50.6 | WAIT     0 | projected 64 ≥ SS 51 over next 4d → wait (saves holding cost) || demand  39 sold  39 lost   0 end  114
+2026-10-16 SKU_B | stock  162 (  no arrival) on-order  114 | F= 41.7/d SS= 74.3 | ORDER   50 | projected 26 < SS 74 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=324) || demand  21 sold  21 lost   0 end  141
+2026-10-16 SKU_C | stock   40 ( +38 arrived) on-order  101 | F= 14.1/d SS= 25.5 | WAIT     0 | projected 28 ≥ SS 25 over next 8d → wait (saves holding cost) || demand  11 sold  11 lost   0 end   29
+2026-10-17 SKU_A | stock  114 (  no arrival) on-order   60 | F= 37.6/d SS= 48.0 | ORDER   60 | projected 23 < SS 48 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=199) || demand  27 sold  27 lost   0 end   87
+2026-10-17 SKU_B | stock  141 (  no arrival) on-order  164 | F= 37.6/d SS= 75.2 | WAIT     0 | projected 80 ≥ SS 75 over next 6d → wait (saves holding cost) || demand  25 sold  25 lost   0 end  116
+2026-10-17 SKU_C | stock   59 ( +30 arrived) on-order   71 | F= 13.5/d SS= 24.4 | ORDER   30 | projected 22 < SS 24 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=132) || demand   6 sold   6 lost   0 end   53
+2026-10-18 SKU_A | stock  147 ( +60 arrived) on-order   60 | F= 35.5/d SS= 46.9 | WAIT     0 | projected 65 ≥ SS 47 over next 4d → wait (saves holding cost) || demand  18 sold  18 lost   0 end  129
+2026-10-18 SKU_B | stock  180 ( +64 arrived) on-order  100 | F= 35.1/d SS= 73.1 | ORDER   50 | projected 70 < SS 73 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=283) || demand  33 sold  33 lost   0 end  147
+2026-10-18 SKU_C | stock   53 (  no arrival) on-order  101 | F= 12.0/d SS= 24.7 | WAIT     0 | projected 58 ≥ SS 25 over next 8d → wait (saves holding cost) || demand   7 sold   7 lost   0 end   46
+2026-10-19 SKU_A | stock  129 (  no arrival) on-order   60 | F= 32.0/d SS= 48.0 | WAIT     0 | projected 61 ≥ SS 48 over next 4d → wait (saves holding cost) || demand  35 sold  35 lost   0 end   94
+2026-10-19 SKU_B | stock  197 ( +50 arrived) on-order  100 | F= 34.6/d SS= 69.4 | WAIT     0 | projected 89 ≥ SS 69 over next 6d → wait (saves holding cost) || demand  37 sold  37 lost   0 end  160
+2026-10-19 SKU_C | stock   46 (  no arrival) on-order  101 | F= 11.0/d SS= 24.1 | WAIT     0 | projected 59 ≥ SS 24 over next 8d → wait (saves holding cost) || demand   5 sold   5 lost   0 end   41
+2026-10-20 SKU_A | stock  154 ( +60 arrived) on-order    0 | F= 32.6/d SS= 45.7 | ORDER   60 | projected 24 < SS 46 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=176) || demand  49 sold  49 lost   0 end  105
+2026-10-20 SKU_B | stock  160 (  no arrival) on-order  100 | F= 35.1/d SS= 65.9 | ORDER   50 | projected 49 < SS 66 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=277) || demand  50 sold  50 lost   0 end  110
+2026-10-20 SKU_C | stock   41 (  no arrival) on-order  101 | F=  9.8/d SS= 23.9 | WAIT     0 | projected 64 ≥ SS 24 over next 8d → wait (saves holding cost) || demand  16 sold  16 lost   0 end   25
+2026-10-21 SKU_A | stock  105 (  no arrival) on-order   60 | F= 35.9/d SS= 46.6 | ORDER   60 | projected 21 < SS 47 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=190) || demand  34 sold  34 lost   0 end   71
+2026-10-21 SKU_B | stock  160 ( +50 arrived) on-order  100 | F= 38.1/d SS= 65.4 | ORDER   50 | projected 31 < SS 65 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=294) || demand  45 sold  45 lost   0 end  115
+2026-10-21 SKU_C | stock   60 ( +35 arrived) on-order   66 | F= 11.0/d SS= 23.8 | WAIT     0 | projected 38 ≥ SS 24 over next 8d → wait (saves holding cost) || demand  13 sold  13 lost   0 end   47
+2026-10-22 SKU_A | stock   71 (  no arrival) on-order  120 | F= 35.5/d SS= 44.2 | WAIT     0 | projected 49 ≥ SS 44 over next 4d → wait (saves holding cost) || demand  45 sold  45 lost   0 end   26
+2026-10-22 SKU_B | stock  115 (  no arrival) on-order  150 | F= 39.5/d SS= 62.6 | ORDER   50 | projected 28 < SS 63 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=299) || demand  47 sold  47 lost   0 end   68
+2026-10-22 SKU_C | stock   83 ( +36 arrived) on-order   30 | F= 11.4/d SS= 22.7 | ORDER   30 | projected 22 < SS 23 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=114) || demand  15 sold  15 lost   0 end   68
+2026-10-23 SKU_A | stock   86 ( +60 arrived) on-order   60 | F= 37.4/d SS= 43.1 | ORDER   60 | projected -4 < SS 43 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=193) || demand  42 sold  42 lost   0 end   44
+2026-10-23 SKU_B | stock  118 ( +50 arrived) on-order  150 | F= 41.0/d SS= 60.2 | ORDER   50 | projected 22 < SS 60 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=306) || demand  62 sold  62 lost   0 end   56
+2026-10-23 SKU_C | stock   68 (  no arrival) on-order   60 | F= 12.1/d SS= 21.9 | WAIT     0 | projected 31 ≥ SS 22 over next 8d → wait (saves holding cost) || demand  10 sold  10 lost   0 end   58
+2026-10-24 SKU_A | stock  104 ( +60 arrived) on-order   60 | F= 38.3/d SS= 41.2 | ORDER   60 | projected 11 < SS 41 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=194) || demand  68 sold  68 lost   0 end   36
+2026-10-24 SKU_B | stock   56 (  no arrival) on-order  200 | F= 45.2/d SS= 63.1 | ORDER   79 | projected -15 < SS 63 over next 6d → order 79 (order-up-to S=334) || demand  34 sold  34 lost   0 end   22
+2026-10-24 SKU_C | stock   88 ( +30 arrived) on-order   30 | F= 11.7/d SS= 20.9 | WAIT     0 | projected 24 ≥ SS 21 over next 8d → wait (saves holding cost) || demand   8 sold   8 lost   0 end   80
+2026-10-25 SKU_A | stock   36 (  no arrival) on-order  120 | F= 44.3/d SS= 49.8 | ORDER   71 | projected -21 < SS 50 over next 4d → order 71 (order-up-to S=227) || demand  37 sold  36 lost   1 end    0
+2026-10-25 SKU_B | stock   72 ( +50 arrived) on-order  229 | F= 42.9/d SS= 61.5 | WAIT     0 | projected 43 < SS 62 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=319) [suppressed: would arrive after horizon] || demand  27 sold  27 lost   0 end   45
+2026-10-25 SKU_C | stock   80 (  no arrival) on-order   30 | F= 11.0/d SS= 20.3 | WAIT     0 | projected 22 ≥ SS 20 over next 8d → wait (saves holding cost) || demand   9 sold   9 lost   0 end   71
+2026-10-26 SKU_A | stock   60 ( +60 arrived) on-order  131 | F= 42.8/d SS= 47.8 | ORDER   60 | projected 20 < SS 48 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=219) || demand  46 sold  46 lost   0 end   14
+2026-10-26 SKU_B | stock   95 ( +50 arrived) on-order  179 | F= 39.8/d SS= 61.8 | WAIT     0 | projected 35 < SS 62 over next 6d → order 50 (raised to min_order_qty) (order-up-to S=300) [suppressed: would arrive after horizon] || demand  42 sold  42 lost   0 end   53
+2026-10-26 SKU_C | stock   71 (  no arrival) on-order   30 | F= 10.6/d SS= 19.4 | WAIT     0 | projected 16 < SS 19 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=104) [suppressed: would arrive after horizon] || demand   9 sold   9 lost   0 end   62
+2026-10-27 SKU_A | stock   74 ( +60 arrived) on-order  131 | F= 43.4/d SS= 45.5 | WAIT     0 | projected 31 < SS 45 over next 4d → order 60 (raised to min_order_qty) (order-up-to S=219) [suppressed: would arrive after horizon] || demand  48 sold  48 lost   0 end   26
+2026-10-27 SKU_B | stock  103 ( +50 arrived) on-order  129 | F= 40.2/d SS= 58.7 | WAIT     0 | projected -9 < SS 59 over next 6d → order 68 (order-up-to S=300) [suppressed: would arrive after horizon] || demand  48 sold  48 lost   0 end   55
+2026-10-27 SKU_C | stock   62 (  no arrival) on-order   30 | F= 10.3/d SS= 18.5 | WAIT     0 | projected 10 < SS 18 over next 8d → order 30 (raised to min_order_qty) (order-up-to S=101) [suppressed: would arrive after horizon] || demand  15 sold  15 lost   0 end   47
+2026-10-28 SKU_A | stock   97 ( +71 arrived) on-order   60 | F= 44.4/d SS= 43.4 | WAIT     0 | projected -20 < SS 43 over next 4d → order 64 (order-up-to S=221) [suppressed: would arrive after horizon] || demand  58 sold  58 lost   0 end   39
+2026-10-28 SKU_B | stock  105 ( +50 arrived) on-order   79 | F= 41.8/d SS= 56.6 | WAIT     0 | projected -67 < SS 57 over next 6d → order 124 (order-up-to S=307) [suppressed: would arrive after horizon] || demand  71 sold  71 lost   0 end   34
+2026-10-28 SKU_C | stock   47 (  no arrival) on-order   30 | F= 11.2/d SS= 18.3 | WAIT     0 | projected -13 < SS 18 over next 8d → order 32 (order-up-to S=108) [suppressed: would arrive after horizon] || demand  16 sold  16 lost   0 end   31
+2026-10-29 SKU_A | stock   99 ( +60 arrived) on-order    0 | F= 47.1/d SS= 43.6 | WAIT     0 | projected -89 < SS 44 over next 4d → order 133 (order-up-to S=232) [suppressed: would arrive after horizon] || demand  42 sold  42 lost   0 end   57
+2026-10-29 SKU_B | stock  113 ( +79 arrived) on-order    0 | F= 47.6/d SS= 65.3 | WAIT     0 | projected -173 < SS 65 over next 6d → order 238 (order-up-to S=351) [suppressed: would arrive after horizon] || demand  48 sold  48 lost   0 end   65
+2026-10-29 SKU_C | stock   61 ( +30 arrived) on-order    0 | F= 12.2/d SS= 18.2 | WAIT     0 | projected -36 < SS 18 over next 8d → order 55 (order-up-to S=116) [suppressed: would arrive after horizon] || demand  18 sold  18 lost   0 end   43
+=== AGENT (EWMA forecast + service-level safety stock) ===
+       demand_units  stockout_units  ...  avg_inventory  avg_inv_value$
+sku                                  ...                               
+SKU_A        3123.0            35.0  ...         69.184         553.474
+SKU_B        2750.0            55.0  ...         66.053         990.789
+SKU_C         865.0             9.0  ...         36.632        1465.263
+TOTAL        6738.0            99.0  ...        171.868        3009.526
+
+[4 rows x 11 columns]
+=== BASELINE (fixed reorder point, fixed Q, no forecast) ===
+       demand_units  stockout_units  ...  avg_inventory  avg_inv_value$
+sku                                  ...                               
+SKU_A        3123.0            21.0  ...        214.434        1715.474
+SKU_B        2750.0           249.0  ...         94.355        1415.329
+SKU_C         865.0             3.0  ...         76.145        3045.789
+TOTAL        6738.0           273.0  ...        384.934        6176.592
+
+[4 rows x 11 columns]
+=== TOTAL comparison ===
+                Baseline     Agent  Change (Agent vs Baseline)  % change
+demand_units    6738.000  6738.000                       0.000     0.000
+stockout_units   273.000    99.000                    -174.000   -63.736
+stockout_days     12.000     9.000                      -3.000   -25.000
+fill_rate          0.959     0.985                       0.026     2.691
+holding_cost    5957.400  2921.800                   -3035.600   -50.955
+stockout_cost   2400.000   860.000                   -1540.000   -64.167
+order_cost       500.000  2380.000                    1880.000   376.000
+total_cost      8857.400  6161.800                   -2695.600   -30.433
+orders_placed     25.000   119.000                      94.000   376.000
+avg_inventory    384.934   171.868                    -213.066   -55.351
+avg_inv_value$  6176.592  3009.526                   -3167.066   -51.275
+Total cost: baseline $8,857 vs agent $6,162 (30.4% lower for the agent).  Fill rate: 95.9% → 98.5%.
+Service-level sweep (all SKUs, agent):
+   service_level  fill_rate  ...  stockout_cost  total_cost
+0           0.80      0.961  ...         2262.0      6984.7
+1           0.85      0.968  ...         1573.0      6414.3
+2           0.90      0.973  ...         1308.0      6393.5
+3           0.95      0.986  ...          735.0      6155.8
+4           0.98      0.991  ...          487.0      6369.2
+5           0.99      0.994  ...          342.0      6436.8
+
+[6 rows x 7 columns]
+EWMA alpha sweep (agent, per-SKU service levels from params.csv):
+   alpha  fill_rate  stockout_units  avg_inventory  total_cost
+0   0.05      0.989            74.0        152.118      5819.0
+1   0.10      0.988            84.0        162.276      5976.3
+2   0.20      0.985            99.0        171.868      6161.8
+3   0.30      0.984           106.0        178.882      6264.7
+4   0.50      0.974           178.0        208.724      7171.9
+Fixed order-cost sweep (agent vs baseline, same decisions, re-priced):
+   order_cost_per_PO  agent_total  baseline_total  agent_saving_pct
+0                  0       3781.8          8357.4              54.7
+1                 20       6161.8          8857.4              30.4
+2                 50       9731.8          9607.4              -1.3
+3                100      15681.8         10857.4             -44.4
+4                200      27581.8         13357.4            -106.5
